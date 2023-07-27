@@ -13,10 +13,10 @@ struct Menu: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State var startersIsEnabled = true
-    @State var mainsIsEnabled = true
-    @State var dessertsIsEnabled = true
-    @State var drinksIsEnabled = true
+    @State var startersIsEnabled = false
+    @State var mainsIsEnabled = false
+    @State var dessertsIsEnabled = false
+    @State var drinksIsEnabled = false
     
     @State var searchText = ""
     
