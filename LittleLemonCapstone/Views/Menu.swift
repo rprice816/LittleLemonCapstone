@@ -73,7 +73,7 @@ struct Menu: View {
                             FoodItem(dish: dish)
                         }
                     }
-                    .listStyle(.plain)
+                    .listStyle(.inset)
                 }
             }
         }
