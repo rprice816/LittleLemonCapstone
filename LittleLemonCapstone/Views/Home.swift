@@ -11,7 +11,12 @@ import SwiftUI
 struct Home: View {
     
     var body: some View {
-        MainScreen()
+        NavigationStack {
+            VStack {
+                Header()
+                Menu()
+            }
+        }
             .navigationBarBackButtonHidden()
     }
 }
