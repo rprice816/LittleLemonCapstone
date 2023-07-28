@@ -48,13 +48,21 @@ struct Menu: View {
                 }
                 .padding()
                 .background(Color.primaryColor1)
-                
-                Text("ORDER FOR DELIVERY!")
-                    .font(.sectionTitle())
-                    .foregroundColor(.highlightColor2)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top)
-                    .padding(.leading)
+                HStack{
+                    Text("ORDER FOR DELIVERY!")
+                        .font(.sectionTitle())
+                        .foregroundColor(.highlightColor2)
+                        .frame(alignment: .leading)
+                        .padding(.top)
+                        .padding(.trailing)
+                    Image("Delivery van")
+                        .resizable()
+                        .renderingMode(.original)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 20, height: 20, alignment: .leading)
+                        .padding(.top)
+                        .padding(.trailing)
+                }
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         Toggle("Starters", isOn: $startersIsEnabled)
@@ -81,17 +89,6 @@ struct Menu: View {
             if !loaded {
                 MenuList.getMenuData(viewContext: viewContext)
                 loaded = true
-            }
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
-            withAnimation {
-                self.isKeyboardVisible = true
-            }
-            
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { notification in
-            withAnimation {
-                self.isKeyboardVisible = false
             }
         }
     }

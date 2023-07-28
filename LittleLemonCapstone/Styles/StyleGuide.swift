@@ -14,7 +14,7 @@ struct ButtonStyleYellowColorWide: ButtonStyle {
             .foregroundColor(configuration.isPressed ? .white : .black)
             .padding(10)
             .background(configuration.isPressed ? Color.primaryColor1 : Color.primaryColor2)
-            .cornerRadius(8)
+            .cornerRadius(10)
             .padding(.horizontal)
     }
 }
@@ -27,7 +27,7 @@ struct ButtonStylePrimaryColor1: ButtonStyle {
             .background(configuration.isPressed ? .white : Color.primaryColor1)
             .cornerRadius(8)
             .overlay(
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.primaryColor1, lineWidth: 1)
             )
             .padding(.horizontal)
@@ -42,7 +42,7 @@ struct ButtonStylePrimaryColorReverse: ButtonStyle {
             .background(configuration.isPressed ? Color.primaryColor1 : .white)
             .cornerRadius(8)
             .overlay(
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.primaryColor1, lineWidth: 1)
             )
             .padding(.horizontal)
@@ -57,7 +57,7 @@ struct ButtonToggleStyle: ButtonStyle {
             .background(configuration.isPressed ? Color.primaryColor1 : .white)
             .cornerRadius(8)
             .overlay(
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.primaryColor1, lineWidth: 1)
             )
             .padding(.horizontal)

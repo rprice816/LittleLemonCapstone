@@ -17,7 +17,6 @@ struct Onboarding: View {
     @State var phoneNumber = ""
     
     @State var isKeyboardVisible = false
-    @State var contentOffset: CGSize = .zero
     
     @State var isLoggedIn = false
     
@@ -95,24 +94,7 @@ struct Onboarding: View {
                             }
                         }
                         .buttonStyle(ButtonStyleYellowColorWide())
-                        
                         Spacer()
-                    }
-                    .offset(y: contentOffset.height)
-                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
-                        withAnimation {
-                            let keyboardRect = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-                            let keyboardHeight = keyboardRect.height
-                            self.isKeyboardVisible = true
-                            self.contentOffset = CGSize(width: 0, height: -keyboardHeight / 2 + 50)
-                        }
-                        
-                    }
-                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { notification in
-                        withAnimation {
-                            self.isKeyboardVisible = false
-                            self.contentOffset = .zero
-                        }
                     }
                 }
                 .onAppear() {
