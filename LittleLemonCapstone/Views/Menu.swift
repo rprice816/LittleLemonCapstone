@@ -55,7 +55,6 @@ struct Menu: View {
                         .frame(alignment: .leading)
                         .padding(.top)
                         .padding(.trailing)
-                        .padding(.bottom)
                     Image("Delivery van")
                         .resizable()
                         .renderingMode(.original)
@@ -63,9 +62,11 @@ struct Menu: View {
                         .frame(width: 20, height: 20, alignment: .leading)
                         .padding(.top)
                         .padding(.trailing)
-                        .padding(.bottom)
 
                 }
+                Text("Tap a category below to view menu options")
+                    .font(.caption)
+                    .foregroundColor(.highlightColor2)
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         Toggle("Starters", isOn: $startersIsEnabled)
