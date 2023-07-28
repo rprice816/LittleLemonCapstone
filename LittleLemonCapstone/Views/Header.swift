@@ -14,25 +14,28 @@ struct Header: View {
         NavigationStack {
             VStack {
                 ZStack {
-                    Image("logo")
                     HStack {
-                        Spacer()
                         if isLoggedIn {
                             NavigationLink(destination: UserProfile()) {
                                 Image("profile")
                                     .resizable()
                                     .aspectRatio( contentMode: .fit)
-                                    .frame(maxHeight: 50)
+                                    .frame(maxHeight: 40)
                                     .clipShape(Circle())
-                                    .padding(.trailing)
+                                    .padding(.leading)
                             }
                         }
+                        Spacer()
+                        Image("logo")
+                        Spacer()
+                        Image(systemName: "cart")
+                            .foregroundColor(.primaryColor1)
+                            .padding(.trailing)
                     }
                 }
             }
         }
-        .frame(maxHeight: 60)
-        .padding(.bottom)
+        .frame(maxHeight: 50)
         .onAppear() {
             if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
                 isLoggedIn = true

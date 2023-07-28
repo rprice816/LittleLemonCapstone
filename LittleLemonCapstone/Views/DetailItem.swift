@@ -45,6 +45,10 @@ struct DetailItem: View {
                         .foregroundColor(.primaryColor1)
                         .monospaced()
                     Spacer()
+                    Button("Add to cart"){
+                        
+                    }
+                    .buttonStyle(ButtonStylePrimaryColor1())
                 }
                 .padding()
                 .frame(width: 350)

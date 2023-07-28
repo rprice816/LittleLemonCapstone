@@ -67,7 +67,6 @@ struct Menu: View {
                 Text("Tap a category below to view menu options")
                     .font(.caption)
                     .foregroundColor(.highlightColor2)
-                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         Toggle("Starters", isOn: $startersIsEnabled)
                         Toggle("Mains", isOn: $mainsIsEnabled)
@@ -76,7 +75,6 @@ struct Menu: View {
                     }
                     .toggleStyle(MyToggleStyle())
                     .padding(.horizontal)
-                }
                 FetchedObjects(predicate: buildPredicate(),
                                sortDescriptors: buildSortDescriptors()) {
                     (dishes: [Dish]) in
