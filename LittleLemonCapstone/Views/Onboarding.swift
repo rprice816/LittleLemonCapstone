@@ -93,7 +93,7 @@ struct Onboarding: View {
                                 isLoggedIn = true
                             }
                         }
-                        .buttonStyle(ButtonStyleYellowColorWide())
+                        .buttonStyle(ButtonStyleYellow())
                         Spacer()
                     }
                 }

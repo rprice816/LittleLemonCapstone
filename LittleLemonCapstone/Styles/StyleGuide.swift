@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ButtonStyleYellowColorWide: ButtonStyle {
+struct ButtonStyleYellow: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity)
@@ -87,7 +87,6 @@ struct MyToggleStyle: ToggleStyle {
 extension Text {
     func onboardingTextStyle() -> some View {
         self
-            .frame(maxWidth: .infinity, alignment: .leading)
             .foregroundColor(Color.primaryColor1)
             .font(.custom("Karla-Bold", size: 13))
     }

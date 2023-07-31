@@ -108,7 +108,7 @@ struct UserProfile: View {
                     UserDefaults.standard.set(false, forKey: kNewsletter)
                     isLoggedOut = true
                 }
-                .buttonStyle(ButtonStyleYellowColorWide())
+                .buttonStyle(ButtonStyleYellow())
                 Spacer(minLength: 20)
                 HStack {
                     Button("Discard Changes") {
